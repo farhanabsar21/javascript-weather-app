@@ -67,4 +67,16 @@ cityForm.addEventListener("submit", e =>{
     updateCity(cityUser)
         .then(data => updateUi(data))
         .catch(err => console.log(err));
+    
+    // saving in local storage
+    localStorage.setItem("city", cityUser);
 });
+
+
+// connect the api call with local storage
+
+if(localStorage.getItem("city")){
+    updateCity(localStorage.getItem("city"))
+        .then(data => updateUi(data))
+        .catch(err => console.log(err));
+}
