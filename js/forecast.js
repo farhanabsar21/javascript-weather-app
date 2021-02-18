@@ -3,7 +3,7 @@ const apiKey = "q2vzCpoCPaXcFoRj0Tr52uGr3IGiVL0C";
 // get weather
 
 const getWeather = async (id)=>{ // I can call it anything
-    const base = "http://dataservice.accuweather.com/currentconditions/v1/";
+    const base = "https://dataservice.accuweather.com/currentconditions/v1/";
     const query = `${id}?apikey=${apiKey}`;
     const response = await fetch(base+query);
     const data = await response.json();
@@ -14,7 +14,7 @@ const getWeather = async (id)=>{ // I can call it anything
 
 // get city information
 const getCity = async (city)=>{
-    const base = "http://dataservice.accuweather.com/locations/v1/cities/search";
+    const base = "https://dataservice.accuweather.com/locations/v1/cities/search";
     const query = `?apikey=${apiKey}&q=${city}`; // when we see ? after a link it means its a query
     const response = await fetch(base+query);
     const data = await response.json();
